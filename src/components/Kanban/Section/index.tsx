@@ -13,19 +13,17 @@ const Section: React.FC<{
 	return (
 		<Wrapper>
 			{!!title && <Title>{title}</Title>}
-			<Droppable droppableId={id}>
-				{provided => (
-					<>
-						<CardWrapper >
-							<CardContainer{...provided.droppableProps} ref={provided.innerRef}>
-								{!!items &&
-									items.map((e, i) => <TaskCard key={e.id} {...e} index={i} />)}
-							</CardContainer>
-						</CardWrapper>
-						{provided.placeholder}
-					</>
-				)}
-			</Droppable>
+			<CardWrapper>
+				<Droppable droppableId={id}>
+					{provided => (
+						<CardContainer {...provided.droppableProps} ref={provided.innerRef}>
+							{!!items &&
+								items.map((e, i) => <TaskCard key={e.id} {...e} index={i} />)}
+							{provided.placeholder}
+						</CardContainer>
+					)}
+				</Droppable>
+			</CardWrapper>
 		</Wrapper>
 	)
 }

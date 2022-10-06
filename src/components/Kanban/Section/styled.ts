@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  max-height: 50vh;
   gap: 20px;
 `
 
@@ -16,7 +16,9 @@ export const CardWrapper = styled.div`
   background: #1890ff;
   border-radius: 8px;
   padding: 10px;
-  `
+  height: 100%;
+  overflow: auto;
+`
 
 export const CardContainer = styled.div`
   display: flex;
